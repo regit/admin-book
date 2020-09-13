@@ -134,7 +134,7 @@ sudo apt install bear clangd-10
 To setup clangd support in `CoC`, do in neovim:
 
 ```
-CocInstall coc-clangd
+:CocInstall coc-clangd
 ```
 
 Then run `:CocConfig`:
@@ -183,7 +183,7 @@ Then simply run:
 In neovim:
 
 ```
-CocInstall coc-python
+:CocInstall coc-python
 ```
 
 [Documentation of coc-python](https://github.com/neoclide/coc-python) is quite complete.
