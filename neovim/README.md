@@ -1,6 +1,15 @@
-## Installation
+## Introduction
+
+This document is describing a simple neovim setup for development in C and Python with Git as SCM.
+
+Full configuration files are available in the `files` directory:
+ 
+ - `flake8` has to be copied to `~/.config/`
+ - Files in `nvim` directory goes to `~/.config/nvim/`
 
 A lot of information have been taken from this excellent blog post: [A Complete Guide to Setting up Neovim for Python Development on Linux](https://jdhao.github.io/2018/12/24/centos_nvim_install_use_guide_en/)
+
+## Installation
 
 ```
 sudo apt install neovim neovim-qt
