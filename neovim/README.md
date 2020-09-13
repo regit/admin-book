@@ -1,3 +1,18 @@
+## Installation
+
+A lot of information have been taken from this excellent blog post: [A Complete Guide to Setting up Neovim for Python Development on Linux](https://jdhao.github.io/2018/12/24/centos_nvim_install_use_guide_en/)
+
+```
+sudo apt install neovim neovim-qt
+```
+
+Install vim-plug to manage plugins:
+
+```
+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+```
+
 ## Neovim global setup
 
 In `~/.config/nvim/init.vim`:
@@ -18,6 +33,11 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 ```
 
+To install the plugins, you need to restart neovim and run `:PlugInstall`.
+
+To update plugins, you can run `:PlugUpdate`.
+
+
 Then continue with:
 
 ```
@@ -26,12 +46,19 @@ set termguicolors     " enable true colors support
 let ayucolor="mirage" " for mirage version of theme
 "let ayucolor="dark"   " for dark version of theme
 colorscheme ayu
+```
 
+For gitgutter and CoC you need these ones:
+
+```
 set updatetime=300
 set signcolumn=yes
 ```
 
-In `~/.config/nvim/ginit.vim` :
+First will allow a interface that react fast. Second will ensure you will not
+have flickering of the first column.
+
+For my personal taste, I wanted to use a specific font in `nvim-qt` so I did put in `~/.config/nvim/ginit.vim` :
 
 ```
 Guifont Noto Mono:h10
