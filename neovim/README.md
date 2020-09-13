@@ -166,6 +166,18 @@ with regards to tabulation. To do this, just add in `~/.config/nvim/init.vim`:
 autocmd BufEnter,BufNewFile,BufRead */git/oisf/* set tabstop=4 shiftwidth=4 expandtab modeline
 ```
 
+### CoC and Rust
+
+To install Rust support in Coc, it seems the easiest way is to have a rustup based installation.
+
+So go to [Rustup website](https://rustup.rs/) and trust the shell.
+
+Then simply run:
+
+```
+:CocInstall coc-rls
+```
+
 ### CoC and python
 
 In neovim:
