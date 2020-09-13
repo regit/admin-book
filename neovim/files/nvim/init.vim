@@ -4,7 +4,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 "Plug 'zchee/deoplete-jedi'
 "Plug 'zchee/deoplete-clang'
 Plug 'vim-airline/vim-airline'
-Plug 'davidhalter/jedi-vim'
+"Plug 'davidhalter/jedi-vim'
 Plug 'scrooloose/nerdtree'
 "Plug 'neomake/neomake'
 Plug 'machakann/vim-highlightedyank'
@@ -15,6 +15,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'jsfaint/gen_tags.vim'
 Plug 'ayu-theme/ayu-vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 
 call plug#end()
 
@@ -179,3 +180,10 @@ nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 " COC end
 
+let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.5, 'highlight': 'Comment' } }
+let $FZF_DEFAULT_COMMAND = 'fdfind --type f'
+
+let mapleader=","
+
+" FZF bindings
+nnoremap <leader>f :FZF<CR>

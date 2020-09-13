@@ -12,7 +12,7 @@ A lot of information have been taken from this excellent blog post: [A Complete 
 ## Installation
 
 ```
-sudo apt install neovim neovim-qt
+sudo apt install neovim neovim-qt fd-find
 ```
 
 Install vim-plug to manage plugins:
@@ -37,6 +37,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'jsfaint/gen_tags.vim'
 Plug 'ayu-theme/ayu-vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 
 call plug#end()
 ```
@@ -91,6 +92,22 @@ You can also just save and add the buffer to the staging area of git (read run `
 To commit, simply run `:Gcommit`.
 
 And to push you can use `:Gpush`.
+
+### Fuzzy File Finding
+
+[fzf](https://github.com/junegunn/fzf) proposes a convenient way to browse files.
+
+```
+let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.5, 'highlight': 'Comment' } }
+let $FZF_DEFAULT_COMMAND = 'fdfind --type f'
+
+let mapleader=","
+
+" FZF bindings
+nnoremap <leader>f :FZF<CR>
+```
+
+You can then type `,f` and a popup window will open. You can then enter part of file name you want to open and the fuzzy matching will do the rest.
 
 ### Conquer of Completion
 
