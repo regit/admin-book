@@ -119,7 +119,7 @@ And you can `K` to see a preview of documentation.
 
 You can use `[g` and `]g` to navigate diagnostics and use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
 
-When you are using `gd` and over commands, the `CTRL+t` that allows you go back is not working as the stack has not been changed.
+When you are using `gd` and over commands, the `CTRL+t` that allows you go back (when using `CTRL+]`) is not working as the stack has not been changed.
 To go back to previous point, you can use `CTRL+o` that take you back to previous cursor position.
 
 ### CoC and C language
