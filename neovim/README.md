@@ -29,7 +29,6 @@ In `~/.config/nvim/init.vim`:
 call plug#begin('~/.local/share/nvim/plugged')
 
 Plug 'vim-airline/vim-airline'
-Plug 'davidhalter/jedi-vim'
 Plug 'scrooloose/nerdtree'
 Plug 'machakann/vim-highlightedyank'
 Plug 'airblade/vim-gitgutter'
