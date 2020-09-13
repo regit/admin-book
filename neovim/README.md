@@ -37,8 +37,7 @@ To install the plugins, you need to restart neovim and run `:PlugInstall`.
 
 To update plugins, you can run `:PlugUpdate`.
 
-
-Then continue with:
+Then if you want to try the color scheme, continue with:
 
 ```
 set termguicolors     " enable true colors support
@@ -66,27 +65,69 @@ Guifont Noto Mono:h10
 
 ## Prepare for coding
 
+### Gitgutter
+
+This simply displays signs on the left of the buffer to signal if the code has been modified.
+
+But most interesting part is that you can navigate through changed items by doing `]c` or `[c`
+
+### Vim Fugitive
+
+This is a GUI for git that runs inside vim/neovim. This is [really complete](https://github.com/tpope/vim-fugitive/blob/master/doc/fugitive.txt).
+
+The main command I use is `:Gblame` which displays a `git annotate` result. Nice thing is that commits can be browsed
+from there.
+
+You can also just save and add the buffer to the staging area of git (read run `git add`) by doing `:Gw`.
+
+And to commit, simply run `:Gc`.
+
+### Conquer of Completion
+
+In short [CoC](https://github.com/neoclide/coc.nvim) is a project that brings IDE features
+to neovim.
+
+It brings:
+
+ - Completion
+ - Linter (showing mistake in the code with explanation)
+ - Code browsing
+
 ### CoC Setup
 
 You need to setup CoC in `~/.config/nvim/init.vim`. Check `CoC` section in the file in `files/nvim/init.vim`.
 
-### CoC and clangd
+#### CoC shortcut
+
+You can easily navigate the code 
+
+* `gd`: Go to definition
+* `gy`: Go to type definition
+* `gr`: Display a list of reference (users of the function/class)
+
+And you can `K` to see a preview of documentation.
+
+You can use `[g` and `]g` to navigate diagnostics and use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
+
+### CoC and C language
+
+This setup is done on a Debian sid with objective being development on [Suricata](https://suricata-ids.org/)
+
+CoC has a clangd backend that allow him to understand C code.
+
+First we need to install dependencies:
 
 ```
 sudo apt install bear clangd-10
 ```
 
-```
-make clean
-bear make
-```
-
+To setup clangd support in `CoC`, do in neovim:
 
 ```
 CocInstall coc-clangd
 ```
 
-Run CocConfig
+Then run `:CocConfig`:
 
 ```
 {
@@ -95,6 +136,18 @@ Run CocConfig
     }
 }
 ```
+
+The program `bear` is used to create compilation information (flags, ...) that are
+needed to clangd to know how to build your software.
+
+Usage is simple, go to your project directory and run:
+
+```
+make clean
+bear make
+```
+
+You will need to do that every time your build system is updated.
 
 My Suricata tree is in `~/git/oisf` and it needs some specific rules
 with regards to tabulation. To do this, just add in `~/.config/nvim/init.vim`:
@@ -109,6 +162,14 @@ In neovim:
 
 ```
 CocInstall coc-python
+```
+
+[Documentation of coc-python](https://github.com/neoclide/coc-python) is quite complete.
+
+The Python interpreter is displayed in the status line. You can change it by doing:
+
+```
+:CocCommand python.setInterpreter
 ```
 
 Setup flake8 as linter and if you need to setup some variable use `~/.config/flake8`.
