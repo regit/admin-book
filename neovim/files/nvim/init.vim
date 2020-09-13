@@ -50,6 +50,8 @@ set signcolumn=yes
 
 nmap <F8> :TagbarToggle<CR>
 
+let mapleader=","
+
 " COC start
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
@@ -110,8 +112,8 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 nmap <leader>rn <Plug>(coc-rename)
 
 " Formatting selected code.
-xmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>f  <Plug>(coc-format-selected)
+xmap <leader>F  <Plug>(coc-format-selected)
+nmap <leader>F  <Plug>(coc-format-selected)
 
 augroup mygroup
   autocmd!
@@ -182,8 +184,6 @@ nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
 let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.5, 'highlight': 'Comment' } }
 let $FZF_DEFAULT_COMMAND = 'fdfind --type f'
-
-let mapleader=","
 
 " FZF bindings
 nnoremap <leader>f :FZF<CR>
