@@ -80,7 +80,9 @@ from there.
 
 You can also just save and add the buffer to the staging area of git (read run `git add`) by doing `:Gw`.
 
-And to commit, simply run `:Gc`.
+To commit, simply run `:Gcommit`.
+
+And to push you can use `:Gpush`.
 
 ### Conquer of Completion
 
