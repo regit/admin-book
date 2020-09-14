@@ -114,6 +114,7 @@ nmap <leader>rn <Plug>(coc-rename)
 " Formatting selected code.
 xmap <leader>F  <Plug>(coc-format-selected)
 nmap <leader>F  <Plug>(coc-format-selected)
+vmap <leader>F  <Plug>(coc-format-selected)
 
 augroup mygroup
   autocmd!
