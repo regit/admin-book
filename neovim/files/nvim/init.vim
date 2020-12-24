@@ -188,3 +188,7 @@ let $FZF_DEFAULT_COMMAND = 'fdfind --type f'
 
 " FZF bindings
 nnoremap <leader>f :FZF<CR>
+
+set cursorline
+set cursorcolumn
+set clipboard+=unnamedplus

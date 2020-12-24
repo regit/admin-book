@@ -174,7 +174,7 @@ Usage is simple, go to your project directory and run:
 
 ```
 make clean
-bear make
+bear -- make
 ```
 
 You will need to do that every time your build system is updated.
