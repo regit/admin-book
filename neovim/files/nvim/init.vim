@@ -17,6 +17,9 @@ Plug 'ayu-theme/ayu-vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 
+Plug 'jackguo380/vim-lsp-cxx-highlight'
+
+
 call plug#end()
 
 "let g:deoplete#enable_at_startup = 0

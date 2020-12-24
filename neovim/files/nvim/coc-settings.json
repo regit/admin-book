@@ -1,6 +1,7 @@
 {
     "coc.preferences.formatOnType": true,
     "clangd": {
-        "path": "clangd-10"
+        "path": "clangd-11",
+        "semanticHighlighting": true	
     }
 }
