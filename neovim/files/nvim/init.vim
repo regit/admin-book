@@ -19,7 +19,6 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 
 Plug 'jackguo380/vim-lsp-cxx-highlight'
 
-
 call plug#end()
 
 "let g:deoplete#enable_at_startup = 0
@@ -185,6 +184,9 @@ nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 " COC end
+
+" clangd specific command
+noremap <leader>H :CocCommand clangd.switchSourceHeader<CR>
 
 let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.5, 'highlight': 'Comment' } }
 let $FZF_DEFAULT_COMMAND = 'fdfind --type f'
