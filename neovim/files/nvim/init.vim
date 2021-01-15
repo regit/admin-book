@@ -32,6 +32,7 @@ call plug#end()
 
 
 autocmd BufEnter,BufNewFile,BufRead */git/oisf/* set tabstop=4 shiftwidth=4 expandtab modeline
+autocmd BufEnter,BufNewFile,BufRead */git/suricata/* set tabstop=4 shiftwidth=4 expandtab modeline
 
 let g:gitgutter_sign_column_always = 1
 
