@@ -44,8 +44,8 @@ let g:gen_tags#gtags_default_map = 1
 
 set termguicolors     " enable true colors support
 "let ayucolor="light"  " for light version of theme
-let ayucolor="mirage" " for mirage version of theme
-"let ayucolor="dark"   " for dark version of theme
+"let ayucolor="mirage" " for mirage version of theme
+let ayucolor="dark"   " for dark version of theme
 colorscheme ayu
 
 set updatetime=300
@@ -198,3 +198,15 @@ nnoremap <leader>f :FZF<CR>
 set cursorline
 set cursorcolumn
 set clipboard+=unnamedplus
+set title
+
+hi Normal guibg=NONE ctermbg=NONE
+
+" Apply fix suggested by coc
+nmap <leader>qf <Plug>(coc-fix-current)
+
+au FileType python set ai et ts=4
+
+"syn match TrailingSpaces "[ \t]\+$"
+"hi def TrailingSpaces ctermbg=lightred guibg=#ff7070
+set list listchars=tab:>·,trail:°,nbsp:·
