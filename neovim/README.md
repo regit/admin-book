@@ -22,6 +22,8 @@ curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 ```
 
+Latest setup needs a neovim 0.5.x that you can get from [Neovim Appimage](https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage)
+
 ## Neovim global setup
 
 In `~/.config/nvim/init.vim`:
