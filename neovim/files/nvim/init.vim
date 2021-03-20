@@ -3,9 +3,10 @@ call plug#begin('~/.local/share/nvim/plugged')
 "Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 "Plug 'zchee/deoplete-jedi'
 "Plug 'zchee/deoplete-clang'
-Plug 'vim-airline/vim-airline'
+"Plug 'vim-airline/vim-airline'
 "Plug 'davidhalter/jedi-vim'
-Plug 'scrooloose/nerdtree'
+"Plug 'scrooloose/nerdtree'
+Plug 'kyazdani42/nvim-tree.lua'
 "Plug 'neomake/neomake'
 Plug 'machakann/vim-highlightedyank'
 "Plug 'morhetz/gruvbox'
@@ -16,14 +17,23 @@ Plug 'jsfaint/gen_tags.vim'
 Plug 'ayu-theme/ayu-vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+
+Plug 'liuchengxu/vista.vim'
 
 Plug 'jackguo380/vim-lsp-cxx-highlight'
+
+Plug 'francoiscabrol/ranger.vim'
+Plug 'voldikss/vim-floaterm'
+
+Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
+Plug 'kyazdani42/nvim-web-devicons'
 
 call plug#end()
 
 "let g:deoplete#enable_at_startup = 0
-"let g:deoplete#sources#clang#libclang_path = "/usr/lib/llvm-10/lib/libclang.so.1"
-"let g:deoplete#sources#clang#libclang_header = "/usr/lib/llvm-10/lib/clang"
+"let g:deoplete#sources#clang#libclang_path = "/usr/lib/llvm-11/lib/libclang.so.1"
+"let g:deoplete#sources#clang#libclang_header = "/usr/lib/llvm-11/lib/clang"
 
 " disable autocompletion, cause we use deoplete for completion
 "let g:jedi#completions_enabled = 1
@@ -210,3 +220,18 @@ au FileType python set ai et ts=4
 "syn match TrailingSpaces "[ \t]\+$"
 "hi def TrailingSpaces ctermbg=lightred guibg=#ff7070
 set list listchars=tab:>·,trail:°,nbsp:·
+
+set autoread
+
+luafile ~/.config/nvim/lua/plugins/galaxyline-config.lua
+source ~/.config/nvim/plug-config/nvimtree-config.vim
+luafile ~/.config/nvim/lua/plugins/nvimtree-config.lua
+
+nnoremap <leader>e :NvimTreeToggle<CR>
+nnoremap <leader>r :NvimTreeRefresh<CR>
+nnoremap <leader>n :NvimTreeFindFile<CR>
+
+autocmd VimEnter * call vista#RunForNearestMethodOrFunction()
+let g:vista_icon_indent = ["╰─▸ ", "├─▸ "]
+
+map <C-j> :Vista focus<CR>

@@ -3,6 +3,6 @@
     "clangd": {
         "path": "clangd-11",
         "semanticHighlighting": true,
-        "arguments": ["--header-insertion=never", "-j=8"]
+        "arguments": ["--header-insertion=never", "-j=16"]
     }
 }
