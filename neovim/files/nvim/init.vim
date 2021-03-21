@@ -235,3 +235,4 @@ autocmd VimEnter * call vista#RunForNearestMethodOrFunction()
 let g:vista_icon_indent = ["╰─▸ ", "├─▸ "]
 
 map <C-j> :Vista focus<CR>
+map <leader>j :Vista finder<CR>
