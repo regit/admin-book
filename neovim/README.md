@@ -213,10 +213,10 @@ Then simply run:
 In neovim:
 
 ```
-:CocInstall coc-python
+:CocInstall coc-pyright
 ```
 
-[Documentation of coc-python](https://github.com/neoclide/coc-python) is quite complete.
+[Documentation of coc-python](https://github.com/fannheyward/coc-pyright) is quite complete.
 
 The Python interpreter is displayed in the status line. You can change it by doing:
 
