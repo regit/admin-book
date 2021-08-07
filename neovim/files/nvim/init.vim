@@ -17,6 +17,8 @@ Plug 'jsfaint/gen_tags.vim'
 Plug 'ayu-theme/ayu-vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'airblade/vim-rooter'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 Plug 'liuchengxu/vista.vim'
@@ -28,6 +30,10 @@ Plug 'voldikss/vim-floaterm'
 
 Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
 Plug 'kyazdani42/nvim-web-devicons'
+
+" TODO  lsp
+" Plug 'neovim/nvim-lspconfig'
+" Plug 'hrsh7th/nvim-compe'
 
 call plug#end()
 
@@ -238,10 +244,12 @@ let g:vista_default_executive = 'coc'
 let g:vista#renderer#enable_icon = 1
 
 " The default icons can't be suitable for all the filetypes, you can extend it as you wish.
-let g:vista#renderer#icons = {
-\   "function": "\uf794",
-\   "variable": "\uf71b",
-\  }
+"let g:vista#renderer#icons = {
+"\   "function": "\uf794",
+"\   "variable": "\uf71b",
+"\  }
 
 map <C-j> :Vista focus<CR>
 map <leader>j :Vista finder<CR>
+set mouse=a
+nnoremap <space>e :CocCommand explorer<CR>
