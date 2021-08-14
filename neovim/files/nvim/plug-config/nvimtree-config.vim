@@ -43,3 +43,5 @@ let g:nvim_tree_icons = {
     \   'symlink': "",
     \   }
     \ }
+
+let g:nvim_tree_gitignore = 1
