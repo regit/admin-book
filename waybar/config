@@ -1,11 +1,12 @@
 {
+    "include": "~/.config/waybar/modules",
     "layer": "top", // Waybar at top layer
     "position": "top", // Waybar at the bottom of your screen
     "height": 44, // Waybar height
     // "width": 1366, // Waybar width
     // Choose the order of the modules
     "modules-left": ["hyprland/workspaces"],
-    "modules-center": ["clock"],
+    "modules-center": ["clock", "custom/power"],
     "modules-right": ["pulseaudio", "cpu", "memory", "network", "tray"],
     "tray": {
         // "icon-size": 21,
